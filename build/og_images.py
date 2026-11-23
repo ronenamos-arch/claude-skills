@@ -13,7 +13,17 @@ import sys
 
 import numpy as np
 from bidi.algorithm import get_display
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, features
+
+# Pillow with libraqm applies the bidi algorithm itself; feeding it
+# get_display() output would reverse the text a second time.
+RAQM = features.check("raqm")
+DIR_KW = {"direction": "rtl"} if RAQM else {}
+
+
+def shape(text):
+    """Text ready for drawing/measuring: logical order under raqm, visual otherwise."""
+    return text if RAQM else get_display(text)
 
 from common import CATALOG, CATEGORIES, OG_DIR, ROOT, category_of, load_internal, load_json
 import render_hub
@@ -30,7 +40,7 @@ if not os.path.isfile(EMOJI_FONT):
     EMOJI_FONT = None
 TITLE_MAX, TITLE_MIN, TAG_PT, BRAND_PT, ICON_PT = 92, 54, 38, 30, 109
 TEXT_W = 1000
-DESIGN = "og-v3"
+DESIGN = "og-v4"
 BRAND = "AI Finance Transformation · סקילים ל-Claude Code"
 JPEG_Q = 90
 # external skill pages (own repos) whose index.html links an image from here; end-session has its own
@@ -56,7 +66,7 @@ def wrap(text, font, width):
             words.append(word)
     for word in words:
         trial = f"{cur} {word}".strip()
-        if cur and font.getlength(get_display(trial)) > width:
+        if cur and font.getlength(shape(trial), **DIR_KW) > width:
             lines.append(cur)
             cur = word
         else:
@@ -65,12 +75,12 @@ def wrap(text, font, width):
 
 
 def centred(draw, y, text, font, fill):
-    draw.text((W / 2, y), get_display(text), font=font, fill=fill, anchor="mm")
+    draw.text((W / 2, y), shape(text), font=font, fill=fill, anchor="mm", **DIR_KW)
 
 
 def title_font(title):
     pt = TITLE_MAX
-    while pt > TITLE_MIN and ImageFont.truetype(TITLE_FONT, pt).getlength(get_display(title)) > TEXT_W:
+    while pt > TITLE_MIN and ImageFont.truetype(TITLE_FONT, pt).getlength(shape(title), **DIR_KW) > TEXT_W:
         pt -= 2
     return ImageFont.truetype(TITLE_FONT, pt)
 
