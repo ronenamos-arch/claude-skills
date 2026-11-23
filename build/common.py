@@ -27,6 +27,7 @@ UPSTREAM_URL = "https://github.com/hiyabh/claude-skills"
 
 # Display order of the hub sections. Unknown categories fall into "other".
 CATEGORIES = {
+    "finance": ("💼", "ראיית חשבון וכספים בישראל"),
     "video": ("🎬", "וידאו ואנימציה"),
     "docs": ("📄", "מסמכים ועברית"),
     "claude": ("✨", "עבודה עם קלוד"),

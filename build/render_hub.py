@@ -8,7 +8,7 @@ from common import (BASE_URL, CATALOG, CATEGORIES, COMMUNITY_NAME, ROOT, aurora_
 
 HUB_TITLE = "כל הסקילים של AI Finance Transformation"
 HUB_DESC = ("מרכז אחד לכל הסקילים ל-Claude Code מבית AI Finance Transformation - "
-            "וידאו, מסמכים בעברית, פיתוח, מחקר ובוטים. כל סקיל עם דף הסבר והתקנה בהדבקה אחת.")
+            "ראיית חשבון בישראל, וידאו, מסמכים בעברית, פיתוח ומחקר. כל סקיל עם דף הסבר והתקנה בהדבקה אחת.")
 # Kept as units: splitting "ל-Claude Code" into inline-blocks breaks bidi order.
 TITLE_WORDS = ["כל", "הסקילים", "שלי", "ל-Claude Code"]
 SCRIPTS = ["assets/motion.js", "assets/hero.js", "assets/filter.js"]
