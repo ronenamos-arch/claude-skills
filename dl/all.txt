@@ -1,9 +1,7 @@
 skill geulah
-skill galaxy-watch-app
 skill talking-head-fx
 skill archive-organizer
 skill stress-test-setup
-skill rabbi-rag-telegram-bot
 skill research-to-obsidian
 skill debug
 skill code-visualizer
@@ -17,7 +15,6 @@ skill il-law
 skill common-mistakes-tracker
 skill work-summary
 skill pdf-flipbook
-skill book-to-print
 skill code-snippets-library
 skill git-workflow
 skill coherent-transcript-editor

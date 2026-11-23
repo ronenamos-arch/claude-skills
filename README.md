@@ -4,8 +4,8 @@
 
 **האתר:** https://ronenamos-arch.github.io/claude-skills/
 
-**באנדל Claude לרואי חשבון ואנשי כספים** (5 וובינרים מוקלטים, 30+ פרומפטים פיננסיים, חוברות Excel וסקילים):
-https://courses.aitransformation.co.il/claude-bundle
+**קורס קלוד AI MASTER עם רונן עמוס** (16 מודולים מעשיים, פרומפטים פיננסיים וסקילים):
+https://www.ronenamoscpa.co.il/courses/sell-page
 
 ## התקנה מהירה (טרמינל)
 

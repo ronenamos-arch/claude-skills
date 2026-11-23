@@ -171,8 +171,7 @@ def course_html(course):
     return f"""<section class="course reveal" aria-labelledby="course-h">
 <a class="course-card" href="{esc(course['url'])}" target="_blank" rel="noopener">
   <picture class="course-pic">
-    <source media="(min-width:860px)" srcset="{esc(course['flyer'])}" width="600" height="900">
-    <img class="course-img" src="{esc(course['image'])}" width="2400" height="1260" loading="lazy"
+    <img class="course-img" src="{esc(course['image'])}" width="959" height="1198" loading="lazy"
          alt="{esc(course['alt'])}">
   </picture>
   <span class="course-body">

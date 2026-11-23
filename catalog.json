@@ -7,21 +7,19 @@
     "debug"
   ],
   "course": {
-    "eyebrow": "הקורס המלא שלנו",
-    "title": "באנדל Claude לרואי חשבון ואנשי כספים",
-    "text": "5 וובינרים מוקלטים מלאים שמלמדים לעבוד עם Claude בעבודת הכספים: מניקוי נתוני ERP ועד דשבורדים אינטראקטיביים לדירקטוריון. כולל 30+ תבניות פרומפטים פיננסיים, חוברות Excel וספריית Skills להורדה.",
+    "eyebrow": "עם רונן עמוס, רו\"ח",
+    "title": "קורס קלוד AI MASTER",
+    "text": "לומדים לעבוד עם Claude בעבודת הכספים: מאוטומציה של סגירת חודש ועד בניית דשבורדים ודוחות לדירקטוריון.",
     "facts": [
-      "5 וובינרים מוקלטים מלאים",
-      "30+ פרומפטים פיננסיים מובנים",
-      "חוברות Excel ו-Skills להורדה",
-      "גישה מיידית לכל החיים"
+      "16 מודולים מעשיים",
+      "200+ פרומפטים פיננסיים",
+      "ספריית Skills להורדה"
     ],
-    "cta": "לפרטים על הבאנדל",
-    "price": "150 ₪, תשלום חד-פעמי",
-    "url": "https://courses.aitransformation.co.il/claude-bundle",
-    "image": "assets/course.webp",
-    "alt": "באנדל Claude לרואי חשבון ואנשי כספים: 5 וובינרים, פרומפטים וסקילים",
-    "flyer": "assets/course-flyer.webp"
+    "cta": "לפרטים ולסילבוס המלא",
+    "price": "",
+    "url": "https://www.ronenamoscpa.co.il/courses/sell-page",
+    "image": "assets/ronen-ai-master.webp",
+    "alt": "רונן עמוס, מרצה קורס קלוד AI MASTER"
   },
   "external": [],
   "guides": [

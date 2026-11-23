@@ -20,7 +20,7 @@ BASE_URL = f"https://{OWNER}.github.io/{REPO}"
 REPO_URL = f"https://github.com/{OWNER}/{REPO}"
 COMMUNITY_NAME = "AI Finance Transformation"
 OWNER_SITE_URL = "https://www.ronenamoscpa.co.il/"
-COURSE_URL = "https://courses.aitransformation.co.il/claude-bundle"
+COURSE_URL = "https://www.ronenamoscpa.co.il/courses/sell-page"
 # Upstream project this hub is based on (MIT license - see LICENSE).
 UPSTREAM_NAME = "בין קודש לקלוד"
 UPSTREAM_URL = "https://github.com/hiyabh/claude-skills"
@@ -145,7 +145,7 @@ def page_shell(title, description, icon, css_href, body, scripts=(), page_path="
 def footer_html():
     return f"""<footer class="foot">
   <p><span class="brand">✨ {COMMUNITY_NAME}</span> ·
-     <a href="{esc(COURSE_URL)}">באנדל Claude לאנשי כספים</a> ·
+     <a href="{esc(COURSE_URL)}">קורס קלוד AI MASTER</a> ·
      <a href="{esc(OWNER_SITE_URL)}">רונן עמוס, רו\"ח - המומחה שלכם ל-AI וכספים</a> ·
      <a href="{REPO_URL}">הקוד ב-GitHub</a></p>
   <p>הסקילים מסופקים כמו שהם, לשימוש חופשי. מותר להעביר הלאה.</p>
