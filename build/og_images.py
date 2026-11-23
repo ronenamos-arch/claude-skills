@@ -7,6 +7,7 @@ NEW file name (the networks cache by URL). build.py stays stdlib-only: it just l
 exists (common.og_image). Run this, then build.py, whenever a title, tagline or icon changes.
 """
 import hashlib
+import os
 import re
 import sys
 
@@ -20,12 +21,17 @@ import render_hub
 W, H = 1200, 630
 BG = (15, 17, 21)
 INK, MUTED, GOLD, LINE = (243, 245, 248), (176, 184, 198), (255, 211, 110), (38, 43, 52)
-FONTS = r"C:\Windows\Fonts"
-TITLE_FONT, BODY_FONT, EMOJI_FONT = rf"{FONTS}\Rubik-Bold.ttf", rf"{FONTS}\Rubik-Regular.ttf", rf"{FONTS}\seguiemj.ttf"
-TITLE_MAX, TITLE_MIN, TAG_PT, BRAND_PT, ICON_PT = 92, 54, 38, 30, 120
+_REPO_FONTS = ROOT / "src" / "lesson-video" / "assets" / "clip_template" / "assets" / "fonts"
+TITLE_FONT = os.environ.get("OG_TITLE_FONT", str(_REPO_FONTS / "Rubik-Bold.ttf"))
+BODY_FONT = os.environ.get("OG_BODY_FONT", str(_REPO_FONTS / "Rubik-Regular.ttf"))
+# Color emoji font (CBDT). Set OG_EMOJI_FONT to use a different one; missing font = no icon.
+EMOJI_FONT = os.environ.get("OG_EMOJI_FONT", "/tmp/fonts/NotoColorEmoji.ttf")
+if not os.path.isfile(EMOJI_FONT):
+    EMOJI_FONT = None
+TITLE_MAX, TITLE_MIN, TAG_PT, BRAND_PT, ICON_PT = 92, 54, 38, 30, 109
 TEXT_W = 1000
-DESIGN = "og-v2"
-BRAND = "בין קודש לקלוד · סקילים ל-Claude Code"
+DESIGN = "og-v3"
+BRAND = "AI Finance Transformation · סקילים ל-Claude Code"
 JPEG_Q = 90
 # external skill pages (own repos) whose index.html links an image from here; end-session has its own
 EXTERNAL = ("claude-video-skills", "claude-shiur-editor-skill", "school-equipment-list")
@@ -82,7 +88,8 @@ def card(icon, title, tagline, chip):
     img = glow(Image.new("RGB", (W, H), BG))
     d = ImageDraw.Draw(img)
     d.rounded_rectangle((24, 24, W - 24, H - 24), radius=28, outline=LINE, width=2)
-    d.text((W / 2, 135), icon, font=ImageFont.truetype(EMOJI_FONT, ICON_PT), embedded_color=True, anchor="mm")
+    if EMOJI_FONT:
+        d.text((W / 2, 135), icon, font=ImageFont.truetype(EMOJI_FONT, ICON_PT), embedded_color=True, anchor="mm")
     centred(d, 285, title, title_font(title), INK)
     font, lines = tagline_lines(tagline)
     for i, line in enumerate(lines):
@@ -98,7 +105,7 @@ def cards():
         out.append((p["name"], p["icon"], p["title"], p["tagline"], CATEGORIES[category_of(p)][1]))
     for g in load_json(CATALOG).get("guides", []):
         out.append((f"guide-{g['name']}", g["icon"], g["title"], g["tagline"], "מדריך"))
-    for e in load_json(CATALOG)["external"]:
+    for e in load_json(CATALOG).get("external", []):
         if e["repo"] in EXTERNAL:
             out.append((e["repo"], e["icon"], e["title"], e["tagline"], CATEGORIES[category_of(e)][1]))
     return out

@@ -2,11 +2,12 @@
 import json
 import random
 
-from common import (BASE_URL, CATALOG, CATEGORIES, ROOT, aurora_html, category_of, esc,
-                    footer_html, load_internal, load_json, page_shell, write_text)
+from common import (BASE_URL, CATALOG, CATEGORIES, COMMUNITY_NAME, ROOT, aurora_html,
+                    category_of, esc, footer_html, load_internal, load_json, page_shell,
+                    write_text)
 
-HUB_TITLE = "כל הסקילים של בין קודש לקלוד"
-HUB_DESC = ("מרכז אחד לכל הסקילים ל-Claude Code שבנינו בקהילת בין קודש לקלוד - "
+HUB_TITLE = "כל הסקילים של AI Finance Transformation"
+HUB_DESC = ("מרכז אחד לכל הסקילים ל-Claude Code מבית AI Finance Transformation - "
             "וידאו, מסמכים בעברית, פיתוח, מחקר ובוטים. כל סקיל עם דף הסבר והתקנה בהדבקה אחת.")
 # Kept as units: splitting "ל-Claude Code" into inline-blocks breaks bidi order.
 TITLE_WORDS = ["כל", "הסקילים", "שלי", "ל-Claude Code"]
@@ -15,13 +16,8 @@ TICKER_SEED = 7          # fixed seeds keep the generated HTML byte-stable
 CONSTELLATION_SEED = 11
 CONSTELLATION_SIZE = 14
 TICKER_MAX_CHARS = 44    # longer phrases wrap to 3 lines and make the hero jump
-# Phrases for the external cards, which have no content/*.json of their own.
-EXTERNAL_SAY = {
-    "claude-shiur-editor-skill": "ערוך לי את השיעור הזה",
-    "claude-end-session-skill": "סיימנו",
-    "claude-video-skills": "תעשה לי סרטון מטורף על",
-    "school-equipment-list": "תאחד לי את רשימות הציוד של הילדים",
-}
+# Phrases for external cards, if any are ever added back to catalog.json.
+EXTERNAL_SAY = {}
 
 
 def skill_count(item):
@@ -151,7 +147,7 @@ def featured_html(items, keys):
 def install_all_html(total):
     """One copy-paste line that installs every skill on the page."""
     cmd = f"curl -fsSL {BASE_URL}/install.sh | bash -s -- all"
-    prompt = (f"התקן לי את כל הסקילים של בין קודש לקלוד: הרץ ב-Bash את הפקודה {cmd} "
+    prompt = (f"התקן לי את כל הסקילים של {COMMUNITY_NAME}: הרץ ב-Bash את הפקודה {cmd} "
               "ואז תסכם לי בקצרה מה הותקן ומה כל סקיל עושה.")
     return f"""<section class="install-all reveal" aria-labelledby="all-h">
 <div class="card all-card">
@@ -198,8 +194,10 @@ def guide_link(guide, href):
 
 
 def guides_html(guide, extra):
-    links = [guide_link(guide, guide["url"])]
+    links = [guide_link(guide, guide["url"])] if guide else []
     links += [guide_link(g, f"guides/{g['name']}/") for g in extra]
+    if not links:
+        return ""
     return '<div class="guides">' + "\n".join(links) + "</div>"
 
 
@@ -207,7 +205,7 @@ def hero_html(total, pages, guide, phrases, extra=()):
     words = "".join(f'<span class="w" style="--i:{i}">{esc(w)}</span> '
                     for i, w in enumerate(TITLE_WORDS))
     return f"""<header class="hero" id="top">
-  <p class="eyebrow rise">👈 {esc('בין קודש לקלוד')}</p>
+  <p class="eyebrow rise">✨ {esc(COMMUNITY_NAME)}</p>
   <h1 class="words">{words.strip()}</h1>
   <p class="sub rise">סקיל הוא "כישרון" שמוסיפים לקלוד: אחרי התקנה של דקה, אומרים לו משפט
      בעברית פשוטה - והוא יודע לבצע משימה שלמה מההתחלה ועד הסוף.</p>
@@ -242,7 +240,7 @@ def render():
     buckets = group(items)
     total = sum(skill_count(item) for item, _ in items)
     body = "\n".join([aurora_html(), '<div class="wrap">', constellation_html(items),
-                      hero_html(total, len(items), catalog["guide"], ticker_phrases(items), catalog.get("guides", [])),
+                      hero_html(total, len(items), catalog.get("guide"), ticker_phrases(items), catalog.get("guides", [])),
                       course_html(catalog.get("course")),
                       featured_html(items, catalog.get("featured", [])),
                       install_all_html(total),

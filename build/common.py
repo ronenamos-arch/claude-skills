@@ -14,12 +14,16 @@ DL_DIR = ROOT / "dl"            # generated tarballs
 PAGES_DIR = ROOT / "skills"     # generated per-skill pages
 CATALOG = ROOT / "catalog.json"
 
-OWNER = "hiyabh"
+OWNER = "ronenamos-arch"
 REPO = "claude-skills"
 BASE_URL = f"https://{OWNER}.github.io/{REPO}"
 REPO_URL = f"https://github.com/{OWNER}/{REPO}"
-COMMUNITY_NAME = "בין קודש לקלוד"
-COMMUNITY_URL = "https://chat.whatsapp.com/Hr8UI2Oy6lkJTPY3tizdSd?s=cl&p=a&mlu=1"
+COMMUNITY_NAME = "AI Finance Transformation"
+OWNER_SITE_URL = "https://www.ronenamoscpa.co.il/"
+COURSE_URL = "https://courses.aitransformation.co.il/claude-bundle"
+# Upstream project this hub is based on (MIT license - see LICENSE).
+UPSTREAM_NAME = "בין קודש לקלוד"
+UPSTREAM_URL = "https://github.com/hiyabh/claude-skills"
 
 # Display order of the hub sections. Unknown categories fall into "other".
 CATEGORIES = {
@@ -140,8 +144,11 @@ def page_shell(title, description, icon, css_href, body, scripts=(), page_path="
 
 def footer_html():
     return f"""<footer class="foot">
-  <p><span class="brand">👈 {COMMUNITY_NAME}</span> ·
-     <a href="{esc(COMMUNITY_URL)}">הצטרפות לקבוצה</a> ·
+  <p><span class="brand">✨ {COMMUNITY_NAME}</span> ·
+     <a href="{esc(COURSE_URL)}">באנדל Claude לאנשי כספים</a> ·
+     <a href="{esc(OWNER_SITE_URL)}">רונן עמוס, רו\"ח - המומחה שלכם ל-AI וכספים</a> ·
      <a href="{REPO_URL}">הקוד ב-GitHub</a></p>
   <p>הסקילים מסופקים כמו שהם, לשימוש חופשי. מותר להעביר הלאה.</p>
+  <p class="credit"><small>מבוסס על מרכז הסקילים של קהילת
+     <a href="{UPSTREAM_URL}">{esc(UPSTREAM_NAME)}</a> (רישיון MIT).</small></p>
 </footer>"""

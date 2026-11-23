@@ -2,84 +2,28 @@
   "_note": "External skill pages (each lives in its own repo). Entries with topic claude-skill are added/refreshed by build/sync_repos.py; hand-edited fields (icon, title, tagline, category, badge) are preserved.",
   "featured": [
     "il-law",
-    "claude-shiur-editor-skill",
-    "claude-end-session-skill",
-    "archive-organizer"
+    "archive-organizer",
+    "work-summary",
+    "debug"
   ],
-  "guide": {
-    "icon": "🚀",
-    "title": "מתחילים כאן: התקנת Claude Code",
-    "tagline": "עוד לא התקנת את התוכנה? המדריך הזה לוקח אותך מאפס ועד שיחה ראשונה, צעד אחרי צעד.",
-    "url": "https://hiyabh.github.io/claude-code-guide/"
-  },
   "course": {
-    "eyebrow": "קורס וידאו בעברית",
-    "title": "Claude Code לכולם: הקורס המלא",
-    "text": "בניתי קורס מסודר למי שמעולם לא כתב שורת קוד. מההתקנה ועד פרויקטים אמיתיים, ומשם לכלים של המומחים: סקילים כמו אלה שבדף הזה, חיבורים לג'ימייל ולדרייב, משימות מתוזמנות ושליטה מהטלפון. הכול בעברית פשוטה, עם הדגמות על המסך האמיתי.",
+    "eyebrow": "הקורס המלא שלנו",
+    "title": "באנדל Claude לרואי חשבון ואנשי כספים",
+    "text": "5 וובינרים מוקלטים מלאים שמלמדים לעבוד עם Claude בעבודת הכספים: מניקוי נתוני ERP ועד דשבורדים אינטראקטיביים לדירקטוריון. כולל 30+ תבניות פרומפטים פיננסיים, חוברות Excel וספריית Skills להורדה.",
     "facts": [
-      "41 שיעורים קצרים",
-      "7 פרקים בשלוש רמות",
-      "כתוביות ומדריך מלווה",
-      "עדכונים בחינם"
+      "5 וובינרים מוקלטים מלאים",
+      "30+ פרומפטים פיננסיים מובנים",
+      "חוברות Excel ו-Skills להורדה",
+      "גישה מיידית לכל החיים"
     ],
-    "cta": "לפרטים על הקורס",
-    "price": "62 ₪, תשלום אחד",
-    "url": "https://claude.ai/artifact/YAxLrfjNhYWFmNGGRa8kPJ",
+    "cta": "לפרטים על הבאנדל",
+    "price": "150 ₪, תשלום חד-פעמי",
+    "url": "https://courses.aitransformation.co.il/claude-bundle",
     "image": "assets/course.webp",
-    "alt": "באנר הקורס Claude Code לכולם: 41 שיעורים, בלי לדעת לתכנת",
+    "alt": "באנדל Claude לרואי חשבון ואנשי כספים: 5 וובינרים, פרומפטים וסקילים",
     "flyer": "assets/course-flyer.webp"
   },
-  "external": [
-    {
-      "repo": "claude-video-skills",
-      "icon": "🎬",
-      "title": "סטודיו וידאו",
-      "tagline": "27 סקילים ליצירה ועריכה של סרטונים - מאנימציה ומושן גרפיקס ועד סיכום אירוע מתמונות.",
-      "category": "video",
-      "badge": "חבילה של 27 סקילים",
-      "url": "https://hiyabh.github.io/claude-video-skills/",
-      "count": 27,
-      "install": {
-        "bundle": "https://hiyabh.github.io/claude-video-skills/claude-video-skills.tar.gz"
-      }
-    },
-    {
-      "repo": "claude-shiur-editor-skill",
-      "icon": "📜",
-      "title": "עורך השיעורים",
-      "tagline": "הופך תמלול של שיעור או דרשה למסמך Word ערוך ומסודר, עם פסוקים מנוקדים - בלי לקצר אף נושא.",
-      "category": "docs",
-      "badge": "2 סקילים",
-      "url": "https://hiyabh.github.io/claude-shiur-editor-skill/",
-      "count": 2,
-      "install": {
-        "bundle": "https://hiyabh.github.io/claude-shiur-editor-skill/shiur-editor-skill.tar.gz"
-      }
-    },
-    {
-      "repo": "claude-end-session-skill",
-      "icon": "🔚",
-      "title": "סוף סשן",
-      "tagline": "כותבים \"סיימנו\" - וקלוד מסדר את התיקייה, מתעד ומגבה את כל מה שנעשה בסשן, בלי לאבד כלום.",
-      "category": "claude",
-      "url": "https://hiyabh.github.io/claude-end-session-skill/",
-      "install": {
-        "bundle": "https://hiyabh.github.io/claude-end-session-skill/end-session-skill.tar.gz"
-      }
-    },
-    {
-      "repo": "school-equipment-list",
-      "icon": "🎒",
-      "title": "רשימה אחת לכל הילדים",
-      "tagline": "מאחד את רשימות הציוד של בית הספר לכל הילדים לרשימת קנייה אחת, מסודרת לפי מדפי החנות.",
-      "category": "life",
-      "url": "https://hiyabh.github.io/school-equipment-list/",
-      "install": {
-        "repo": "https://codeload.github.com/hiyabh/school-equipment-list/tar.gz/refs/heads/main",
-        "name": "school-equipment-list"
-      }
-    }
-  ],
+  "external": [],
   "guides": [
     {
       "name": "skill-hubs",

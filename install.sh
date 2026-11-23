@@ -2,13 +2,13 @@
 #
 # Install skills from the hub into ~/.claude/skills/
 #
-#   One or more skills:  curl -fsSL https://hiyabh.github.io/claude-skills/install.sh | bash -s -- debug test-loop
-#   Everything:          curl -fsSL https://hiyabh.github.io/claude-skills/install.sh | bash -s -- all
+#   One or more skills:  curl -fsSL https://ronenamos-arch.github.io/claude-skills/install.sh | bash -s -- debug test-loop
+#   Everything:          curl -fsSL https://ronenamos-arch.github.io/claude-skills/install.sh | bash -s -- all
 #
 # Never overwrites an existing skill of the same name - it is skipped instead.
 set -euo pipefail
 
-HUB="${SKILLS_HUB:-https://hiyabh.github.io/claude-skills}"   # override only for local testing
+HUB="${SKILLS_HUB:-https://ronenamos-arch.github.io/claude-skills}"   # override only for local testing
 SKILLS_DIR="${HOME}/.claude/skills"
 
 if [ "$#" -eq 0 ]; then

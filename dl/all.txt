@@ -30,7 +30,3 @@ skill lesson-video
 skill floorplan-3d
 skill pre-build-setup
 skill threejs-viewer
-bundle https://hiyabh.github.io/claude-video-skills/claude-video-skills.tar.gz
-bundle https://hiyabh.github.io/claude-shiur-editor-skill/shiur-editor-skill.tar.gz
-bundle https://hiyabh.github.io/claude-end-session-skill/end-session-skill.tar.gz
-repo school-equipment-list https://codeload.github.com/hiyabh/school-equipment-list/tar.gz/refs/heads/main

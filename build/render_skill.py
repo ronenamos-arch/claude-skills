@@ -1,6 +1,6 @@
 """Render one skill landing page from content/<name>.json."""
-from common import (BASE_URL, CATEGORIES, PAGES_DIR, REPO_URL, aurora_html,
-                    category_of, esc, footer_html, page_shell, write_text)
+from common import (BASE_URL, CATEGORIES, COMMUNITY_NAME, PAGES_DIR, REPO_URL,
+                    aurora_html, category_of, esc, footer_html, page_shell, write_text)
 
 CSS_HREF = "../../assets/site.css"
 SCRIPTS = ["../../assets/motion.js"]
@@ -102,7 +102,7 @@ def render(page):
         '<nav class="back"><a class="btn ghost" href="../../">→ לכל הסקילים</a></nav>',
         footer_html(), "</div>",
     ])
-    title = f"{page['title']} - סקיל ל-Claude Code · בין קודש לקלוד"
+    title = f"{page['title']} - סקיל ל-Claude Code · {COMMUNITY_NAME}"
     html = page_shell(title, page["tagline"], page["icon"], CSS_HREF, body, SCRIPTS,
                       page_path=f"skills/{page['name']}/", og_name=page["name"])
     write_text(PAGES_DIR / page["name"] / "index.html", html)

@@ -5,7 +5,8 @@ text of guides_src/<name>.<key>.txt, so prompts can hold any character. Output: 
 """
 import re
 
-from common import CATALOG, ROOT, aurora_html, esc, footer_html, load_json, page_shell, write_text
+from common import (CATALOG, COMMUNITY_NAME, ROOT, aurora_html, esc, footer_html,
+                    load_json, page_shell, write_text)
 
 SRC_DIR = ROOT / "guides_src"
 OUT_DIR = ROOT / "guides"
@@ -29,7 +30,7 @@ def render_one(guide):
     body = "\n".join([aurora_html(dim=True), '<div class="wrap">', fragment,
                       '<nav class="back"><a class="btn ghost" href="../../">→ לכל הסקילים</a></nav>',
                       footer_html(), "</div>"])
-    title = f"{guide['title']} · בין קודש לקלוד"
+    title = f"{guide['title']} · {COMMUNITY_NAME}"
     html = page_shell(title, guide["tagline"], guide["icon"], CSS_HREF, body, SCRIPTS,
                       page_path=f"guides/{name}/", og_name=f"guide-{name}")
     write_text(OUT_DIR / name / "index.html", html)
