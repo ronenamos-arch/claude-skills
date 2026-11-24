@@ -62,6 +62,14 @@ curl -fsSL https://ronenamos-arch.github.io/claude-skills/install.sh | bash -s -
 - [הכנה ובדיקה של דוחות מע״מ](https://ronenamos-arch.github.io/claude-skills/skills/israeli-vat-reporting/): חישוב וריכוז מע״מ עסקאות ותשומות ובדיקת נתונים לקראת דיווח תקופתי.
 - [ארכיטקט סביבת עבודה ICM](https://ronenamos-arch.github.io/claude-skills/skills/icm-architect/): הפיכת תהליך או אוסף ידע לסביבת תיקיות שקופה, עם שלבים, הקשר ובדיקות.
 
+## סקילים חדשים: Pivot, מסרטון לסקיל ומסמכים בעברית
+
+נוספו שלושה סקילים, ולכל אחד דף הסבר בעברית, חבילת התקנה וקובצי מקור. בסך הכול: 47 סקילים.
+
+- [דוחות Pivot מטבלאות גולמיות](https://ronenamos-arch.github.io/claude-skills/skills/pivot-excel/): הופך טבלת נתונים לדוח Pivot ניתן לרענון, עם דוגמה בעברית.
+- [מסרטון הדרכה לסקיל](https://ronenamos-arch.github.io/claude-skills/skills/video-to-skill/): הופך סרטון הדרכה או תמלול לסקיל שאפשר להפעיל שוב.
+- [מחולל מסמכים בעברית](https://ronenamos-arch.github.io/claude-skills/skills/hebrew-document-generator/): מסמכי Word, PDF ו-PowerPoint בעברית עם כיווניות נכונה.
+
 ## קרדיט
 
 המרכז מבוסס על [מרכז הסקילים של קהילת בין קודש לקלוד](https://github.com/hiyabh/claude-skills),
@@ -69,6 +77,7 @@ curl -fsSL https://ronenamos-arch.github.io/claude-skills/install.sh | bash -s -
 
 סקילי החשבונאות: Copyright (c) 2026 Skills IL (Yootech), MIT.
 ICM Architect: Copyright (c) 2026 Jake Van Clief, MIT.
+מחולל מסמכים בעברית: Copyright (c) 2026 Skills IL (Yootech), MIT.
 רישיונות המקור כלולים בכל תיקיית סקיל ובחבילת ההורדה.
 
 ## רישיון

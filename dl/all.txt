@@ -5,6 +5,7 @@ skill icm-architect
 skill stress-test-setup
 skill israeli-shaam-e-invoice-builder
 skill research-to-obsidian
+skill pivot-excel
 skill debug
 skill israeli-vat-reporting
 skill israeli-financial-reports
@@ -22,7 +23,9 @@ skill incident-response
 skill session-journal
 skill whatsapp-personality-quiz
 skill project-architecture
+skill hebrew-document-generator
 skill il-law
+skill video-to-skill
 skill common-mistakes-tracker
 skill gws-israeli-business-sheets
 skill israeli-annual-reports

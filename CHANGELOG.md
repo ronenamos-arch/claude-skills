@@ -11,6 +11,11 @@
 כל שינוי משמעותי לפרויקט מתועד כאן.
 פורמט: [Keep a Changelog](https://keepachangelog.com) · גרסאות: [SemVer](https://semver.org).
 
+## [1.15.0] - 2026-11-24
+
+### Added (תוסף)
+- שלושה סקילים חדשים עם דף הסבר בעברית: [pivot-excel](src/pivot-excel/SKILL.md), [video-to-skill](src/video-to-skill/SKILL.md), [hebrew-document-generator](src/hebrew-document-generator/SKILL.md) (Skills IL, MIT). בסך הכול 47 סקילים.
+
 ## [1.13.0] - 2026-11-20
 
 ### Added (תוסף)
