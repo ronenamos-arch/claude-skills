@@ -150,6 +150,4 @@ def footer_html():
      <a href="{esc(OWNER_SITE_URL)}">רונן עמוס, רו\"ח - המומחה שלכם ל-AI וכספים</a> ·
      <a href="{REPO_URL}">הקוד ב-GitHub</a></p>
   <p>הסקילים מסופקים כמו שהם, לשימוש חופשי. מותר להעביר הלאה.</p>
-  <p class="credit"><small>מבוסס על מרכז הסקילים של קהילת
-     <a href="{UPSTREAM_URL}">{esc(UPSTREAM_NAME)}</a> (רישיון MIT).</small></p>
 </footer>"""
