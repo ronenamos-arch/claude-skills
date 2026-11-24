@@ -14,7 +14,7 @@ Optional on any beat: `tr="zoom|push|slide|iris|flash|blinds|wipe|fade"` to over
 | `KIN(at, words)` | 2-5 key words | each word slams in (scale 2.6→1, tilt) at the moment it is said - reveal defaults to the words |
 | `KW(at, big, chips, reveal)` | heading + chips | chips spring in on their words |
 | `L(at, title, items, reveal)` | list | dot pops, line slides in, per item |
-| `V(at, pasuk, cite)` / `SRC(...)` | quote card | card rises, words reveal / highlight sweeps |
+| `V(at, quote, cite)` / `SRC(...)` | quote card | card rises, words reveal / highlight sweeps |
 | `N(at, n, label, sub)` | counter | ring draws while the number counts up |
 | `END(at, title, eyebrow, sub)` | closing card | like T, gold title |
 

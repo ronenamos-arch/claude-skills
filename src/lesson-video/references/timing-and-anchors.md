@@ -1,7 +1,7 @@
 # Timing and anchors
 
 ## How anchors resolve
-- `anchor.find(words, phrase, after)` normalizes both sides (niqqud and punctuation stripped) and matches each
+- `anchor.find(words, phrase, after)` normalizes both sides (vowel marks and punctuation stripped) and matches each
   phrase word as a **substring** of consecutive transcript words, searching only after `after`.
 - Beats resolve **in order**: each search starts at the previous beat's time, so the same phrase later in the
   chapter is found correctly. A beat appears `LEAD = 0.15s` after its anchor word starts.
@@ -16,7 +16,7 @@
   never from the edited lesson text.
 - Very short words ("צא", "בניסן") match as substrings of longer words - prefer 2-3 word phrases.
 - A private name can come out as a real word ("רחל כהן" → "רחל כוהן"): hide it with `timed_drops` [from, to, token].
-- Some sentences are simply not transcribed (a quoted pasuk mumbled fast). Anchor to the next clear phrase.
+- Some sentences are simply not transcribed (a quote mumbled fast). Anchor to the next clear phrase.
 
 ## Checking resolution (do this every time)
 Print a table: beat time, type, anchor, and the transcript segment at that time. Read it top to bottom - a phrase

@@ -1,10 +1,10 @@
 ---
 name: il-law
 description: |
-  Live, cited Israeli legal research from official free sources only: Knesset law register (validity, amendments), Reshumot gazette PDFs, Wikisource consolidated statutes, Supreme Court rulings (search + full text), data.gov.il (decisive appraisers, companies), iplan plans, Sefaria. No Nevo/Takdin. Every legal claim gets an official link + retrieval date; unverified claims are labelled.
+  Live, cited Israeli legal research from official free sources only: Knesset law register (validity, amendments), Reshumot gazette PDFs, Wikisource consolidated statutes, Supreme Court rulings (search + full text), data.gov.il (decisive appraisers, companies), iplan plans. No Nevo/Takdin. Every legal claim gets an official link + retrieval date; unverified claims are labelled.
   TRIGGER on Hebrew: "פסק דין", "פסיקה", "הלכה", "בית משפט", "העליון", "בג"ץ", "תקדים", "חוק", "סעיף", "תקנות", "רשומות", "הצעת חוק", "מה הדין", "מה החוק אומר", "האם חוקי", "חוזה", "תביעה", "ערעור", "היטל השבחה", "שמאי מכריע", "תב"ע", "מיסוי מקרקעין", "פינוי בינוי", "תמ"א 38", "הגנת הדייר".
   English: "Israeli law", "Israeli court", "Supreme Court of Israel", "ruling", "statute", "Knesset", "regulation", "case law".
-  USE THIS before stating what Israeli law or case law says - in answers, memos, contract reviews or other skills. NOT for halacha on its own, NOT for documents without legal claims.
+  USE THIS before stating what Israeli law or case law says - in answers, memos, contract reviews or other skills. NOT for documents without legal claims.
 ---
 
 # il-law - מחקר משפטי ישראלי עם מקורות חיים
@@ -32,7 +32,6 @@ description: |
 | "מי בעלי החברה / האם החברה פעילה" | `datagov.py company --q "..."` ; MCP `data-gov-il` | רשם החברות (מעודכן יומי) | official |
 | "מה סטטוס תכנית / מתי פורסמה ברשומות" | `iplan.py plan --number "101-..."` ; `iplan.py plans --name --city` | סטטוס, תאריכי הפקדה/אישור/פרסום, קישור mavat | official |
 | הנחיות יועמ"ש, חוזרי מס, החלטות ממשלה, פסיקת דוברות, בתי דין רבניים | Playwright MCP לפי `references/blocked.md` | דפדפן בלבד (Cloudflare) | official |
-| משפט עברי כהקשר | `sefaria.py text --ref` / `search --text` ; MCP `sefaria` | טקסט + קישור, **לא דין מחייב** | community |
 
 שרתי ה-MCP הם ליד ונוחות. **כל ציטוט שמגיע משרת MCP מאומת ב-`cite.py` לפני מסירה** (`il-eli` מחזיר `lex_uri` לכנסת - להריץ עליו `cite.py law`).
 
@@ -44,7 +43,7 @@ description: |
 4. **פסק דין**: מספר הליך, ערכאה, תאריך, שמות הצדדים, וקישור `pdf_url` **בדיוק כפי שהסקריפט החזיר אותו** (path + fileName + type - קישור קטום מוביל לדף הבית ולא לפסק). ציטוט מילולי והלכה **רק מתוך טקסט שנשלף ב-`supreme.py get`**, עם ציון הפסקה. אם לא נשלף - "לא נקרא, נמצא רק בחיפוש".
 5. **שלילה**: לעולם לא "אין פסיקה בנושא" / "החוק לא מסדיר". אלא: "לא נמצא במקורות שנבדקו: העליון (ביטוי X, שנים Y-Z), ...; לא נבדקו: מחוזי ושלום (אין מאגר פתוח)".
 6. **מה לא נבדק** נאמר בסוף כל תשובה, מתוך `references/blocked.md`, כשהוא רלוונטי לשאלה.
-7. **משפט עברי** מסומן "הקשר, לא דין מחייב". **קורפוס `il-eli`** מסומן "קורפוס מחקרי, רישיון לא מתועד".
+7. **קורפוס `il-eli`** מסומן "קורפוס מחקרי, רישיון לא מתועד".
 8. **הסקיל תומך מחקר ואינו ייעוץ משפטי.** כשההשלכה כספית או דיונית - לכתוב במפורש שעו"ד צריך לאשר, ומה בדיוק לבקש ממנו לבדוק.
 9. לפני מסירה - **צ'ק-ליסט**: כל טענה מקושרת? כל דרגה מסומנת? כל תאריך שליפה קיים? `cite.py` רץ על כל מספר הליך ומזהה חוק? רשימת "לא נבדק" בסוף?
 
@@ -86,7 +85,6 @@ python -m pip install il-eli-mcp==0.5.3
 claude mcp add -s user il-eli -e IL_ELI_RUNTIME_URL= -e IL_ELI_BASE_URL=https://knesset.gov.il/Odata/ParliamentInfo.svc -- python -m il_eli_mcp
 claude mcp add -s user knesset -- npx -y knesset-mcp@1.1.1
 claude mcp add -s user data-gov-il -- npx -y data-gov-il-mcp@3.0.1
-claude mcp add -s user --transport http sefaria https://mcp.sefaria.org/mcp
 claude mcp add -s user playwright -- npx -y @playwright/mcp@0.0.83
 ```
 

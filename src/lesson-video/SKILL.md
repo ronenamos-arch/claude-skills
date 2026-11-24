@@ -1,33 +1,32 @@
 ---
 name: lesson-video
 description: >-
-  Turn a full-length recorded Torah lesson / shiur (30-90 min audio) into a richly animated 16:9 YouTube video
-  at minimal cost: the uncut recording under ~200 timed beats (titles, questions, pesukim, kinetic type, live
+  Turn a full-length recorded lecture, webinar or lesson (30-90 min audio) into a richly animated 16:9 YouTube video
+  at minimal cost: the uncut recording under ~200 timed beats (titles, questions, quotes, kinetic type, live
   diagrams - flow, cycle, timeline, bars, balance, venn, stack, ladder - and illustrations with camera moves),
   karaoke captions, a YouTube thumbnail, a YouTube settings file with chapters, optional 9:16 reels.
   HyperFrames + local Whisper; only cheap flash-lite images cost money (~$2-3).
-  TRIGGER on Hebrew: 'תעשה סרטון לשיעור', 'סרטון להקלטה', 'הנפש את השיעור', 'סרטון מונפש לשיעור',
-  'סרטון יוטיוב לשיעור', 'סרטון עם הנפשות ותרשימים'. English: 'animate this lesson recording', 'lesson video',
-  'shiur video'. NOT for a short TTS dvar Torah reel (dvar-torah-animation), NOT for event footage
-  (event-recap-video), NOT for editing lesson text (shiur-editor).
+  TRIGGER on Hebrew: 'תעשה סרטון להרצאה', 'סרטון להקלטה', 'הנפש את ההרצאה', 'סרטון מונפש לוובינר',
+  'סרטון יוטיוב לשיעור', 'סרטון עם הנפשות ותרשימים'. English: 'animate this lecture recording', 'lesson video',
+  'webinar video'. NOT for a short TTS reel, NOT for event footage, NOT for editing transcript text
+  (coherent-transcript-editor).
 ---
 
-# Lesson Video - שיעור מוקלט ← סרטון מונפש
+# Lesson Video - הרצאה / וובינר מוקלטים ← סרטון מונפש
 
 The recording plays uncut; the screen shows the eye what to look at **exactly when it is said**.
-Built from the Sukkot 5787 video (47:52, 16 chapters, 180 beats, 47 images, $2.5) and upgraded so the
+Built from a real 47:52 lecture video (16 chapters, 180 beats, 47 images, $2.5) and upgraded so the
 picture **never stands still more than 12 seconds** - the engine fails the build otherwise.
 
 ## Iron rules
 - **Never show something before it is said.** Every beat and every inner element sits on an anchor phrase.
 - **Cheap by design.** No sub-agents writing HTML: Claude writes a compact Python beat script; scripts render it.
   Images: `gemini-3.1-flash-lite-image`; edits: `gemini-3.1-flash-image`. Verify prices on the day - they change.
-- **Modesty + identity**: tichel tied at the back, never hijab; girls bare-headed;
-  only men inside a synagogue hall; no Dome of the Rock / mosques; negative characters not identifiably Jewish;
-  no portraits of real people (hostages, rabbis, family) - symbolic images instead. Check every image with crops.
+- **Image safety + identity**: everyday neutral clothing, no logos, flags or uniforms;
+  no portraits of real people (clients, colleagues, public figures) - symbolic images instead. Check every image with crops.
 - **Private names never on screen.** Ask once what to do with names/sensitive stories; block them in captions.
-- **Hebrew/RTL:** sequences start on the right; only "-" (no em/en dash); fractions in words; niqqud only on
-  verified text (pull pesukim from Sefaria or the lesson's verified MD).
+- **Hebrew/RTL:** sequences start on the right; only "-" (no em/en dash); fractions in words; quotes only from
+  verified text (use the lecture's verified document or the original source).
 - **Render silent, mux with ffmpeg (`mux.sh`, which also mixes the sound effects)** - the HyperFrames audio mix timed out on long lessons.
 
 ## Workflow
@@ -71,7 +70,7 @@ first. Match the beat to the content - the richer the match, the more alive the 
 | A list of 2-5 items | `L` (or `KW` chips) |
 | The punchline sentence | `KIN` (each word slams in when spoken) or `SAY` with *highlight* |
 | A question to the audience | `Q` |
-| Pasuk / source quote | `V` / `SRC` / `SPLIT` (picture + quote) |
+| Quote / source | `V` / `SRC` / `SPLIT` (picture + quote) |
 | A chat/app conversation on a phone | `PHONE` (messages pop in; `you/say/ask/done` steps) |
 | "The link is below the video" | `LINK` (card with a scannable QR code; needs `pip install qrcode`) |
 | A story, mashal, scene | `S` with `shots` (camera moves to details) or `IT` |
@@ -96,7 +95,7 @@ bash build_all.sh      # specs → captions → chapters → index → beats →
 ### 5. Look at it
 `npx --yes hyperframes@0.8.106 snapshot --at <t1,t2,...> --no-end -o snapshots/x` from `clip/` - one frame per
 beat (after its reveals) plus ~16 spread points. Read the contact sheets: RTL order, overlaps, clipped text,
-caption matches the image, modesty.
+caption matches the image, image safety.
 
 ### 6. Render + deliver
 ```bash

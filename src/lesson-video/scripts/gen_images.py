@@ -25,24 +25,16 @@ ART = (
     "the scene fills the whole frame edge to edge with no empty or blank areas. "
 )
 TAIL = " Wholesome, family-friendly. No text, no Hebrew or English letters, no captions, no logos, no watermark."
-# Modern scenes: religious-Zionist dress. Women: headscarf only, never a veil.
+# Modern scenes: everyday professional people, neutral dress.
 MODERN = (
-    "MODESTY (STRICT, non-negotiable): every modern-day human is an observant RELIGIOUS-ZIONIST (Dati-Leumi) Jew "
-    "dressed fully modestly - men and boys wear a KNITTED KIPPAH (kippah seruga), NOT a chareidi black hat, "
-    "beard optional, a long-sleeved shirt with tzitzit; GIRLS NEVER WEAR A KIPPAH: any child with long hair, braids or ponytails is a girl and has "
-    "NOTHING at all on her head, bare uncovered hair, long skirt); women have their hair covered with a Jewish TICHEL tied in a knot at the BACK of the head, face, chin, "
-    "jawline and neck fully visible - NEVER a hijab wrapped around the face or under the chin, NEVER a hood, "
-    "NEVER a face veil, nothing in Arab or Muslim style, long sleeves to the wrist, a high neckline, and a long skirt. "
-    "Inside a synagogue hall there are ONLY men and boys. NO mosques, NO Dome of the Rock, NO golden domes, NO minarets anywhere."
+    "PEOPLE (STRICT): every modern-day human is an ordinary adult or child in everyday, neutral clothing "
+    "(business-casual in work scenes), diverse and natural, faces friendly and fully visible. "
+    "No religious, national or political symbols, no uniforms or logos, no identifiable real people."
 )
-# Historic Eastern-European scenes: knitted kippot did not exist then.
+# Historic scenes: period-appropriate clothing only.
 HISTORIC = (
-    "HISTORICAL ERA (STRICT): 18th-19th century Eastern European Jews. ABSOLUTELY NO KNITTED OR COLORFUL "
-    "KIPPOT anywhere - every man and boy wears a plain BLACK cloth skullcap, a round black hat, a peaked "
-    "worker's cap or a fur hat; long dark coats or simple period workwear, full beards, peyot. Women wear a "
-    "simple kerchief tied at the back of the head over their hair, face, chin and neck fully visible - "
-    "NEVER a hood, NEVER a hijab wrapped around the face, NEVER a face veil, long period "
-    "dresses with long sleeves."
+    "HISTORICAL ERA (STRICT): 18th-19th century scene. Period-appropriate simple clothing and workwear, "
+    "no modern items, no anachronisms, no logos, no identifiable real people."
 )
 from scenes import SCENES, HISTORIC_SCENES, ANCIENT_SCENES, ANCIENT
 

@@ -15,24 +15,22 @@ The lite model **ignores edit instructions** - always edit with flash-image. A 4
 
 ## Prompts
 `scenes.py` holds the subject only; `gen_images.py` appends the art style (flat 2D storybook, deep green +
-night blue + golden light, scene fills the frame edge to edge) and the era block (MODERN / HISTORIC / ANCIENT).
+night blue + golden light, scene fills the frame edge to edge) and the era block (MODERN / HISTORIC / ANCIENT; neutral people and period blocks).
 Do not ask for "the subject in the right two thirds" - the model leaves blank strips.
 
 ## What the cheap model gets wrong (check every image)
 Make 2x2 contact sheets at 960x540 per tile, then **crop** every small and background figure:
-- A hijab wrapped around a woman's face/neck - even in a small window or crowd.
-- Women and girls seated inside the synagogue hall among the men.
-- A kippah on a girl with braids; a bald child.
-- The Dome of the Rock / golden domes / mosques in any Jerusalem skyline or wall picture.
+- Faces or heads covered, cropped or distorted, especially small background figures.
+- Extra fingers, merged people, a child with an adult face.
+- Logos, flags, uniforms or recognizable real people.
 - Stray printed numbers or gibberish Hebrew letters on banners.
-- Hooded or veiled figures in historic street scenes.
-- Interrogation / prisoner scenes: no kippah, no tzitzit.
+- Modern items (phones, cars, glasses) in historic or ancient scenes.
 
 ## Fixing
 - Composition fine, one detail wrong → `edits.py` + `IMG_MODEL=gemini-3.1-flash-image python edit_images.py name`.
   Say what the detail must **become**: "the small blue cap must become her own brown hair" works;
-  "remove the kippah" produced a bald girl. `{TICHEL}` expands to the exact tichel wording.
+  "remove the hat" produced a bald figure. `{ATTIRE}` expands to the standard neutral-clothing wording.
 - The backup is `build/img_old/<name>_v1.png` and edits always start from it. After regenerating an image,
   rename the old `_v1` first or the edit will be applied to the old picture.
-- Many figures wrong, or a structural problem (mixed seating, blank strip) → move the file to `img_old/` and
-  regenerate with a sharper prompt ("ONLY men and boys", "NO domes", "plain undecorated walls").
+- Many figures wrong, or a structural problem (blank strip) → move the file to `img_old/` and
+  regenerate with a sharper prompt ("plain undecorated walls", "exactly three people", "no logos").

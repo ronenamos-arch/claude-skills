@@ -53,18 +53,13 @@
 - **TLS ישן**: השרת מציע ציפרים מתחת לרמת האבטחה של OpenSSL 3 -> `SSLV3_ALERT_HANDSHAKE_FAILURE`. `net.py` מרכיב adapter עם `DEFAULT:@SECLEVEL=1` ל-host הזה בלבד.
 - שדות: `pl_number`, `pl_name`, `plan_county_name`, `internet_short_status`, `station_desc`, `depositing_date`, `pl_date7` (אישור), `pl_date_8` (**פרסום ברשומות**), `pl_url` (mavat), `pl_objectives`. תאריכים במילישניות epoch - הסקריפט ממיר.
 
-## 7. ספריא (`scripts/sefaria.py`)
-
-- `https://www.sefaria.org/api/texts/<ref>`, `POST /api/search-wrapper`. משפט עברי - הקשר, לא דין מחייב.
-
-## 8. שרתי MCP מותקנים (user scope, `~/.claude.json`)
+## 7. שרתי MCP מותקנים (user scope, `~/.claude.json`)
 
 | שרת | גרסה נעוצה | כלים | הערת אבטחה מסקירת הקוד |
 |---|---|---|---|
 | `il-eli` | PyPI `il-eli-mcp==0.5.3` | `il_search_laws`, `il_get_law`, `il_search_law_texts`, `il_get_law_documents`, `il_search_case_law`, `il_get_case`, `il_coverage` | מוריד מניפסט "runtime" מ-GitHub releases של המחבר שיכול להחליף את כתובת ה-API. **נוטרל**: `IL_ELI_RUNTIME_URL=""` + `IL_ELI_BASE_URL` נעוץ לכנסת. cache/audit הופנו ל-`%LOCALAPPDATA%\il-law\il-eli`. הקורפוס (10,558 פסקי דין, HuggingFace `guychuk/case-law-israel`) ברישיון לא מתועד - למחקר בלבד, כל ציטוט ממנו מאומת מול המקור. |
 | `data-gov-il` | npm `data-gov-il-mcp@3.0.1` | `find_datasets`, `get_dataset_info`, `list_resources`, `search_records`, ... (9) | פונה ל-data.gov.il בלבד. |
 | `knesset` | npm `knesset-mcp@1.1.1` | `search-bills-by-name` (פרמטר `keyword`), `get-bill-info`, `list-bills-by-status`, `get-committee-info`, `list-committees`, `list-knesset-members`, `list-factions`, ... (9) | פונה ל-knesset.gov.il בלבד. |
-| `sefaria` | HTTP `https://mcp.sefaria.org/mcp` | `get_text`, `text_search`, `get_links_between_texts`, ... (14) | השרת הרשמי של ספריא (בעל הנתונים). הגרסה המקומית היא HTTP-only עם הגנת host, לכן נבחר המארח הרשמי. |
 | `playwright` | npm `@playwright/mcp@0.0.83` | דפדפן | Microsoft. למקורות החסומים ב-Cloudflare (ראה `blocked.md`). |
 
 **הוסר**: `@skills-il/kolzchut-mcp` - ה-API של כל-זכות (`/w/api.php`) מחזיר 404, השרת שבור upstream. **לא הותקנו**: `pipeworx` (שאילתות דרך שרת צד ג'), `judaro` (מסחרי), `Ansvar` (מת), `nevo-takdin-courts-mcp` (מקורות מסחריים).

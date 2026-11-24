@@ -55,7 +55,7 @@ def C(at, rh, rl, lh, ll, mid="מול", reveal=None):
 
 
 def V(at, q, cite, size=None, reveal=None):
-    """A pasuk with niqqud (verify the text before use)."""
+    """A quote card (verify the quoted text before use)."""
     return _b("verse", at, reveal, q=q, cite=cite, **({"size": size} if size else {}))
 
 

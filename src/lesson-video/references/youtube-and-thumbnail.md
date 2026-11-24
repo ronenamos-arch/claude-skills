@@ -3,7 +3,7 @@
 ## Thumbnail (`make_thumbnail.py`)
 - Source: the `thumb-hero` illustration (or any scene) + `video.json` `thumb`:
   `{"img", "title" (2-5 words, *gold word*), "kicker" (badge top), "sub" (one line), "badge" (corner, e.g. "47 דק'")}`.
-- The page is HTML rendered by HyperFrames' browser, so Hebrew RTL, niqqud and fonts are correct (no PIL bidi).
+- The page is HTML rendered by HyperFrames' browser, so Hebrew RTL and fonts are correct (no PIL bidi).
 - Layout: picture full-bleed, dark gradient on the right, title right-aligned 168px Frank Ruehl.
   Prompt the hero with the subject on the LEFT half so the title does not cover faces.
 - Output: `<title> - תמונה ממוזערת.jpg`, 1280x720, JPEG quality stepped down until < 2MB (YouTube limit).

@@ -15,12 +15,10 @@ OLD_DIR = Path(__file__).resolve().parent / "img_old"
 KEEP = (" Keep EVERYTHING else exactly the same: the same composition, camera framing, people positions and poses, "
         "background, lighting, colors and flat 2D storybook art style. Change nothing except what is described. "
         "No text, no letters, no captions, no logos.")
-TICHEL = ("a Jewish married-woman's TICHEL: a colorful cloth scarf covering only the hair, tied in a knot at the BACK "
-          "of the head at the nape, so the whole face, the chin, the jawline, the ears area and the neck stay fully "
-          "visible and uncovered. NOT a hijab, NOT wrapped around the face, chin or neck, NOT pinned under the chin, "
-          "NOT draped over the shoulders, no veil of any kind")
+ATTIRE = ("everyday neutral clothing with nothing on the head, hair visible, nothing covering the face, chin or neck, "
+          "no symbols of any kind")
 
-# Project edits live in build/edits.py: EDITS = {"name": "Change ONLY ... {TICHEL} ..."}
+# Project edits live in build/edits.py: EDITS = {"name": "Change ONLY ... {ATTIRE} ..."}
 from edits import EDITS  # noqa: E402
 
 
@@ -33,7 +31,7 @@ def edit(key, name):
     img = base64.b64encode(backup.read_bytes()).decode()
     resp = http_post(f"{BASE}/models/{MODEL}:generateContent?key={key}",
                      {"contents": [{"parts": [{"inlineData": {"mimeType": "image/png", "data": img}},
-                                              {"text": EDITS[name].replace("{TICHEL}", TICHEL) + KEEP}]}],
+                                              {"text": EDITS[name].replace("{ATTIRE}", ATTIRE) + KEEP}]}],
                       "generationConfig": {"imageConfig": {"aspectRatio": "16:9"}}})
     raw = extract_png(resp)
     if not raw:

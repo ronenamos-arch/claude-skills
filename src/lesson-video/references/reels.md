@@ -21,7 +21,7 @@ bash mux.sh --reel lo-mivtzar       # "<title> - רילס lo-mivtzar.mp4"
 What it does: every beat overlapping the passage becomes a layer - picture beats as full-height Ken Burns shots,
 text and diagram beats as big animated text cards (their title/text/words). Captions are 4 words per line,
 84px, centred low, the spoken word turns gold. A progress bar runs along the bottom; the last 2.5s show an end
-card with the lesson title and "השיעור המלא ביוטיוב".
+card with the lesson title and "ההקלטה המלאה ביוטיוב".
 
 Check with `npx --yes hyperframes@0.8.106 snapshot --at 1.5,5,15,30,45 -o snaps` inside the reel folder:
 caption lines must never overlap, the hook must be readable, faces must not be cropped out of the 9:16 frame
