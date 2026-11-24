@@ -78,6 +78,7 @@ curl -fsSL https://ronenamos-arch.github.io/claude-skills/install.sh | bash -s -
 סקילי החשבונאות: Copyright (c) 2026 Skills IL (Yootech), MIT.
 ICM Architect: Copyright (c) 2026 Jake Van Clief, MIT.
 מחולל מסמכים בעברית: Copyright (c) 2026 Skills IL (Yootech), MIT.
+Astryx: Copyright (c) 2026 Meta Platforms, Inc., MIT.
 רישיונות המקור כלולים בכל תיקיית סקיל ובחבילת ההורדה.
 
 ## רישיון

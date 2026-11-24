@@ -14,6 +14,7 @@
 ## [1.15.0] - 2026-11-24
 
 ### Added (תוסף)
+- סקיל חדש עם דף הסבר בעברית: [astryx](src/astryx/SKILL.md), הסקיל הרשמי של ספריית העיצוב Astryx של Meta (MIT). בסך הכול 48 סקילים.
 - שלושה סקילים חדשים עם דף הסבר בעברית: [pivot-excel](src/pivot-excel/SKILL.md), [video-to-skill](src/video-to-skill/SKILL.md), [hebrew-document-generator](src/hebrew-document-generator/SKILL.md) (Skills IL, MIT). בסך הכול 47 סקילים.
 
 ## [1.13.0] - 2026-11-20

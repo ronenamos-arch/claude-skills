@@ -1,3 +1,4 @@
+skill astryx
 skill geulah
 skill talking-head-fx
 skill archive-organizer
@@ -10,6 +11,7 @@ skill debug
 skill israeli-vat-reporting
 skill israeli-financial-reports
 skill hashavshevet-data-tools
+skill lesson-video
 skill israeli-bank-reconciliation
 skill code-visualizer
 skill israeli-receipt-scanner
@@ -41,7 +43,6 @@ skill prototype
 skill website-launch-checklist
 skill archive-media
 skill production-safety-guard
-skill lesson-video
 skill floorplan-3d
 skill pre-build-setup
 skill threejs-viewer
