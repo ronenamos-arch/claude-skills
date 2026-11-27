@@ -215,13 +215,13 @@ def hero_html(total, pages, guide, phrases, extra=()):
 </header>"""
 
 
-def freebies_html(freebies):
+def freebies_html(freebies, prefix=""):
     """Designed cards for the free Gumroad lead magnets; empty when catalog has none."""
     if not freebies:
         return ""
     cards = "\n".join(f"""<li class="freewrap reveal">
   <a class="free-card" href="{esc(f['url'])}" target="_blank" rel="noopener">
-    <span class="free-pic"><img src="{esc(f['image'])}" alt="{esc(f['alt'])}" loading="lazy">
+    <span class="free-pic"><img src="{esc(prefix + f['image'])}" alt="{esc(f['alt'])}" loading="lazy">
       <span class="free-badge">חינם</span></span>
     <span class="free-t">{esc(f['title'])}</span>
     <span class="free-d">{esc(f['text'])}</span>
@@ -237,13 +237,13 @@ def freebies_html(freebies):
 </ul></section>"""
 
 
-def course_cards_html(cards):
+def course_cards_html(cards, prefix=""):
     """Two designed course cards (Claude AI MASTER, Copilot Masterclass) after the free resources."""
     if not cards:
         return ""
     items = "\n".join(f"""<li class="cc-wrap reveal">
   <a class="cc-card" href="{esc(c['url'])}" target="_blank" rel="noopener">
-    <span class="cc-pic"><img src="{esc(c['image'])}" alt="{esc(c['alt'])}" loading="lazy"
+    <span class="cc-pic"><img src="{esc(prefix + c['image'])}" alt="{esc(c['alt'])}" loading="lazy"
       style="object-position:{esc(c.get('pos','center top'))}"></span>
     <span class="cc-body">
       <span class="cc-kicker">קורס</span>

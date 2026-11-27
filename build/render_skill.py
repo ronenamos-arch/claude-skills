@@ -114,12 +114,19 @@ def install_html(page):
 </details></section>"""
 
 
+def cta_html():
+    from render_hub import course_cards_html, freebies_html
+    from common import CATALOG, load_json
+    cat = load_json(CATALOG)
+    return freebies_html(cat.get("freebies", []), "../../") + course_cards_html(cat.get("course_cards", []), "../../")
+
+
 def render(page):
     body = "\n".join([
         aurora_html(dim=True), '<div class="wrap">', header_html(page), what_html(page), say_html(page),
         example_html(page), requires_html(page), install_html(page),
         '<nav class="back"><a class="btn ghost" href="../../">→ לכל הסקילים</a></nav>',
-        footer_html(page.get("plain", False)), "</div>",
+        cta_html(), footer_html(rights=True), "</div>",
     ])
     title = f"{page['title']} - סקיל ל-Claude Code · {COMMUNITY_NAME}"
     html = page_shell(title, page["tagline"], page["icon"], CSS_HREF, body, SCRIPTS,

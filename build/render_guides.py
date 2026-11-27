@@ -29,7 +29,7 @@ def render_one(guide):
     fragment = fill(name, (SRC_DIR / f"{name}.html").read_text(encoding="utf-8"))
     body = "\n".join([aurora_html(dim=True), '<div class="wrap">', fragment,
                       '<nav class="back"><a class="btn ghost" href="../../">→ לכל הסקילים</a></nav>',
-                      footer_html(), "</div>"])
+                      footer_html(rights=True), "</div>"])
     title = f"{guide['title']} · {COMMUNITY_NAME}"
     html = page_shell(title, guide["tagline"], guide["icon"], CSS_HREF, body, SCRIPTS,
                       page_path=f"guides/{name}/", og_name=f"guide-{name}")
