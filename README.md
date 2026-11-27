@@ -70,6 +70,12 @@ curl -fsSL https://ronenamos-arch.github.io/claude-skills/install.sh | bash -s -
 - [מסרטון הדרכה לסקיל](https://ronenamos-arch.github.io/claude-skills/skills/video-to-skill/): הופך סרטון הדרכה או תמלול לסקיל שאפשר להפעיל שוב.
 - [מחולל מסמכים בעברית](https://ronenamos-arch.github.io/claude-skills/skills/hebrew-document-generator/): מסמכי Word, PDF ו-PowerPoint בעברית עם כיווניות נכונה.
 
+## סקיל חדש: tldr
+
+נוסף סקיל אחד, עם דף הסבר בעברית, חבילת התקנה ודוגמה. בסך הכול: 49 סקילים.
+
+- [שורה תחתונה של עשר שניות בכל תשובה](https://ronenamos-arch.github.io/claude-skills/skills/tldr/): העבודה המלאה, ומתחתיה סיכום קצר עם החלטה אחת לכל היותר.
+
 ## קרדיט
 
 המרכז מבוסס על [מרכז הסקילים של קהילת בין קודש לקלוד](https://github.com/hiyabh/claude-skills),

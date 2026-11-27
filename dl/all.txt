@@ -43,6 +43,7 @@ skill prototype
 skill website-launch-checklist
 skill archive-media
 skill production-safety-guard
+skill tldr
 skill floorplan-3d
 skill pre-build-setup
 skill threejs-viewer
