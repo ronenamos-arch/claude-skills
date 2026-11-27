@@ -394,3 +394,12 @@ details.faq[open] summary{color:var(--gold)}
   .flow li:nth-child(2)::after{display:block}
 }
 @media (prefers-contrast:more){ .tile,.flow li,details.faq{border-color:#5a6473} .tile span,.flow span:last-child{color:#c6ccd6} }
+
+/* ---------- example screenshots (illustrations) ---------- */
+.shots{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:18px}
+.shot{margin:0; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:10px; min-width:0}
+.shot a{display:block}
+.shot img{display:block; width:100%; height:auto; border-radius:9px}
+.shot figcaption{color:var(--muted); font-size:.93rem; line-height:1.5; padding:10px 4px 2px}
+.shots-note{font-size:.9rem; margin:10px 2px 0}
+@media (max-width:720px){ .shots{grid-template-columns:1fr} }

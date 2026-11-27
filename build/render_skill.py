@@ -61,10 +61,18 @@ def example_html(page):
     ex = page.get("example")
     if not ex or not ex.get("in"):
         return ""
+    shots = ""
+    if ex.get("shots"):
+        figs = "".join(
+            f'<figure class="shot"><a href="../../{esc(x["src"])}" target="_blank" rel="noopener">'
+            f'<img src="../../{esc(x["src"])}" alt="{esc(x["alt"])}" loading="lazy" width="900"></a>'
+            f'<figcaption>{esc(x["caption"])}</figcaption></figure>' for x in ex["shots"])
+        shots = (f'<div class="shots">{figs}</div>'
+                 f'<p class="muted shots-note">{esc(ex.get("shots_note", ""))}</p>')
     return f"""<section class="reveal"><h2>דוגמה</h2>
 <div class="ba"><div class="card"><h3>מה נותנים</h3><div class="sample">{esc(ex['in'])}</div></div>
 <div class="card after"><h3>מה מקבלים</h3><div class="sample">{esc(ex.get('out', ''))}</div></div></div>
-</section>"""
+{shots}</section>"""
 
 
 def requires_html(page):
