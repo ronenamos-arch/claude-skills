@@ -27,17 +27,28 @@ def install_prompt(page):
 
 def header_html(page):
     icon, label = CATEGORIES[category_of(page)]
-    return f"""<nav class="crumbs rise"><a href="../../">→ כל הסקילים</a>
-  <span class="sep">/</span> <span>{icon} {esc(label)}</span></nav>
-<header class="hero hero-skill">
-  <div class="skill-icon rise" aria-hidden="true"><span>{esc(page['icon'])}</span></div>
+    plain = page.get("plain")
+    cat = esc(label) if plain else f"{icon} {esc(label)}"
+    icon_html = ("" if plain else
+                 f'<div class="skill-icon rise" aria-hidden="true"><span>{esc(page["icon"])}</span></div>')
+    text = f"""<div class="hero-text">
+  {icon_html}
   <h1 class="rise">{esc(page['title'])}</h1>
   <p class="sub rise">{esc(page['tagline'])}</p>
   <div class="cta rise">
     <a class="btn" href="#install">איך מתקינים</a>
     <a class="btn ghost" href="{REPO_URL}/tree/main/src/{esc(page['name'])}">הקבצים ב-GitHub</a>
-  </div>
-</header>"""
+  </div></div>"""
+    shot = page.get("hero_shot")
+    if shot:
+        media = (f'<a class="hero-shot rise" href="../../{esc(shot["src"])}" target="_blank" rel="noopener">'
+                 f'<img src="../../{esc(shot["src"])}" alt="{esc(shot["alt"])}" width="900"></a>')
+        header = f'<header class="hero hero-skill hero-media">{text}{media}</header>'
+    else:
+        header = f'<header class="hero hero-skill">{text}</header>'
+    return f"""<nav class="crumbs rise"><a href="../../">→ כל הסקילים</a>
+  <span class="sep">/</span> <span>{cat}</span></nav>
+{header}"""
 
 
 def what_html(page):
@@ -108,7 +119,7 @@ def render(page):
         aurora_html(dim=True), '<div class="wrap">', header_html(page), what_html(page), say_html(page),
         example_html(page), requires_html(page), install_html(page),
         '<nav class="back"><a class="btn ghost" href="../../">→ לכל הסקילים</a></nav>',
-        footer_html(), "</div>",
+        footer_html(page.get("plain", False)), "</div>",
     ])
     title = f"{page['title']} - סקיל ל-Claude Code · {COMMUNITY_NAME}"
     html = page_shell(title, page["tagline"], page["icon"], CSS_HREF, body, SCRIPTS,

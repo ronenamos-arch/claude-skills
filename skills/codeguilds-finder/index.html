@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ronenamos-arch.github.io/claude-skills/assets/og/codeguilds-finder-670f25b8.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔍%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../../assets/site.css?v=2a6c0372">
+<link rel="stylesheet" href="../../assets/site.css?v=3f08fef2">
 <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.motionReady)document.documentElement.classList.remove('js')},2500)</script>
 <script src="../../assets/motion.js?v=8b14141c" defer></script>
 </head>
@@ -27,15 +27,14 @@
 <div class="wrap">
 <nav class="crumbs rise"><a href="../../">→ כל הסקילים</a>
   <span class="sep">/</span> <span>🔎 מחקר וארגון</span></nav>
-<header class="hero hero-skill">
+<header class="hero hero-skill"><div class="hero-text">
   <div class="skill-icon rise" aria-hidden="true"><span>🔍</span></div>
   <h1 class="rise">חיפוש כלים ב-CodeGuilds</h1>
   <p class="sub rise">לפני שקלוד יגיד &#x27;אין לי כלי לזה&#x27; - הוא מחפש במאגר קהילתי אם כבר בנו כזה.</p>
   <div class="cta rise">
     <a class="btn" href="#install">איך מתקינים</a>
     <a class="btn ghost" href="https://github.com/ronenamos-arch/claude-skills/tree/main/src/codeguilds-finder">הקבצים ב-GitHub</a>
-  </div>
-</header>
+  </div></div></header>
 <section class="reveal"><h2>מה זה עושה</h2>
 <div class="card prose"><p>הסקיל הזה מחפש במאגר קהילתי בשם CodeGuilds (כ-3,000 סקילים, agents, שרתי MCP, hooks ותבניות פרומפט) כשקלוד נתקל במשימה שדורשת יכולת שאין לו - למשל חיבור לשירות חיצוני, פורמט קובץ נישתי, או workflow ספציפי לתחום.</p><p>איך זה עובד: קלוד מנסח את הפער החסר במשפט אחד, מחפש במאגר לפי מילות מפתח, ומציג לך את ההתאמות המובילות (שם, סוג, מספר הורדות, מי הכותב) - בלי להעתיק דוחות ארוכים. הוא אף פעם לא מתקין לבד: הוא תמיד עוצר ושואל אותך אישור מפורש לפני התקנה, כי התקנה כותבת לתצורה הגלובלית של Claude Code.</p><p>מה שמקבלים: גישה למאגר קהילתי בלי לצאת מהשיחה, בקרה מלאה על מה שמותקן (כולל אפשרות להסיר), ומניעת מצב שבו קלוד בונה מאפס פתרון שכבר קיים ומתוחזק על ידי מישהו אחר. חשוב לזכור שזה מאגר קהילתי ולא תוכן רשמי של Anthropic - קלוד מסמן חבילות שנראות לא מתוחזקות או לא אמינות.</p><h3>מתי זה שימושי</h3><ul class="checks"><li>קלוד עומד להגיד &#x27;אין לי דרך לחבר את זה ל-Slack&#x27; - הוא בודק קודם אם כבר יש כלי מוכן במאגר</li><li>אתה שואל בפירוש &#x27;יש סקיל מוכן להמרת קובץ Figma לקוד?&#x27; או &#x27;תחפש ב-CodeGuilds כלי ל...&#x27;</li><li>משימה דורשת אינטגרציה נישתית (MCP server לשירות ספציפי, hook לתהליך עבודה מסוים) שלא כדאי לבנות מאפס</li><li>רוצים לראות מה הקהילה כבר בנתה לפני שמשקיעים זמן בפיתוח עצמאי של סקיל או agent</li><li>צריך להסיר כלי שהותקן קודם דרך המאגר (uninstall) או לראות מה כבר מותקן (list)</li></ul></div></section>
 <section class="reveal"><h2>מה אומרים לקלוד</h2>

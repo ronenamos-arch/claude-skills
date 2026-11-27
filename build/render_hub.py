@@ -215,6 +215,27 @@ def hero_html(total, pages, guide, phrases, extra=()):
 </header>"""
 
 
+def freebies_html(freebies):
+    """Designed cards for the free Gumroad lead magnets; empty when catalog has none."""
+    if not freebies:
+        return ""
+    cards = "\n".join(f"""<li class="freewrap reveal">
+  <a class="free-card" href="{esc(f['url'])}" target="_blank" rel="noopener">
+    <span class="free-pic"><img src="{esc(f['image'])}" alt="{esc(f['alt'])}" loading="lazy">
+      <span class="free-badge">חינם</span></span>
+    <span class="free-t">{esc(f['title'])}</span>
+    <span class="free-d">{esc(f['text'])}</span>
+    <span class="free-cta">הורדה חינמית מיידית ←</span>
+  </a>
+</li>""" for f in freebies)
+    return f"""<section class="freebies" aria-labelledby="freebies-h">
+<h2 id="freebies-h" class="reveal"><span aria-hidden="true">🎁</span> משאבים חינמיים להורדה</h2>
+<p class="muted reveal">מתנות דיגיטליות מהחנות של רונן ב-Gumroad: לוחצים, משאירים מייל והקובץ אצלכם. בלי תשלום, בלי מנוי.</p>
+<ul class="free-grid">
+{cards}
+</ul></section>"""
+
+
 def filterbar_html(buckets):
     return f"""<div class="filterbar">
   <input class="search" type="search" placeholder="חיפוש סקיל... (למשל: וורד, בוט, יוטיוב)"
@@ -244,7 +265,7 @@ def render():
                       featured_html(items, catalog.get("featured", [])),
                       install_all_html(total),
                       filterbar_html(buckets), '<main id="skills">', sections_html(buckets),
-                      "</main>", footer_html(), "</div>"])
+                      "</main>", freebies_html(catalog.get("freebies", [])), footer_html(), "</div>"])
     html = page_shell(HUB_TITLE, HUB_DESC, "🧰", "assets/site.css", body, SCRIPTS, page_path="", og_name="hub")
     write_text(ROOT / "index.html", html)
     return len(items), total

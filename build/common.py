@@ -143,9 +143,10 @@ def page_shell(title, description, icon, css_href, body, scripts=(), page_path="
 """
 
 
-def footer_html():
+def footer_html(plain=False):
+    brand = COMMUNITY_NAME if plain else f"✨ {COMMUNITY_NAME}"
     return f"""<footer class="foot">
-  <p><span class="brand">✨ {COMMUNITY_NAME}</span> ·
+  <p><span class="brand">{brand}</span> ·
      <a href="{esc(COURSE_URL)}">קורס קלוד AI MASTER</a> ·
      <a href="{esc(OWNER_SITE_URL)}">רונן עמוס, רו\"ח - המומחה שלכם ל-AI וכספים</a> ·
      <a href="{REPO_URL}">הקוד ב-GitHub</a></p>

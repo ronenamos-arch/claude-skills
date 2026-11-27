@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ronenamos-arch.github.io/claude-skills/assets/og/stress-test-setup-f38c2a48.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../../assets/site.css?v=2a6c0372">
+<link rel="stylesheet" href="../../assets/site.css?v=3f08fef2">
 <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.motionReady)document.documentElement.classList.remove('js')},2500)</script>
 <script src="../../assets/motion.js?v=8b14141c" defer></script>
 </head>
@@ -27,15 +27,14 @@
 <div class="wrap">
 <nav class="crumbs rise"><a href="../../">→ כל הסקילים</a>
   <span class="sep">/</span> <span>🛠️ פיתוח וזרימת עבודה</span></nav>
-<header class="hero hero-skill">
+<header class="hero hero-skill"><div class="hero-text">
   <div class="skill-icon rise" aria-hidden="true"><span>📈</span></div>
   <h1 class="rise">בדיקות עומס</h1>
   <p class="sub rise">בונה בדיקות עומס (k6) - עומס רגיל, זינוק פתאומי ועומס ממושך - לפי נפח המשתמשים הצפוי.</p>
   <div class="cta rise">
     <a class="btn" href="#install">איך מתקינים</a>
     <a class="btn ghost" href="https://github.com/ronenamos-arch/claude-skills/tree/main/src/stress-test-setup">הקבצים ב-GitHub</a>
-  </div>
-</header>
+  </div></div></header>
 <section class="reveal"><h2>מה זה עושה</h2>
 <div class="card prose"><p>מתאים לאפליקציות/API שרצים בפרודקשן עם משתמשים אמיתיים או SLA. שולף את נפח העומס הצפוי (בקשות בשנייה, משתמשים במקביל) ובונה שלוש בדיקות k6: עומס בסיסי, זינוק פתאומי (spike) ועומס ממושך לאיתור דליפות זיכרון (soak).</p><p>לפני כתיבת הקוד, עובר על נקודות חנק צפויות (מסד נתונים, קריאות חיצוניות), נפילה בחן, הגבלת קצב (rate limiting) ו-caching - ומתעד הכל בתוכנית סקלביליות.</p><p>מוסיף את הבדיקות לתסריטי ההרצה של הפרויקט, עם סף כשלון ברור (זמן תגובה, אחוז שגיאות) שנשלף מדרישות המוצר בפועל - לא ברירת מחדל שרירותית.</p><h3>מתי זה שימושי</h3><ul class="checks"><li>אפליקציית web/API שעומדת לצאת לפרודקשן עם משתמשים אמיתיים</li><li>יש SLA לזמינות או לזמן תגובה שצריך לוודא שעומדים בו</li><li>לפני דיפלוי משמעותי, רוצים לוודא שהמערכת עומדת בעומס</li><li>יש חשד לדליפת זיכרון תחת עומס ממושך</li></ul></div></section>
 <section class="reveal"><h2>מה אומרים לקלוד</h2>

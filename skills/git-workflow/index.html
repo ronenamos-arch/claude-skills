@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ronenamos-arch.github.io/claude-skills/assets/og/git-workflow-80d157c9.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔀%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../../assets/site.css?v=2a6c0372">
+<link rel="stylesheet" href="../../assets/site.css?v=3f08fef2">
 <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.motionReady)document.documentElement.classList.remove('js')},2500)</script>
 <script src="../../assets/motion.js?v=8b14141c" defer></script>
 </head>
@@ -27,15 +27,14 @@
 <div class="wrap">
 <nav class="crumbs rise"><a href="../../">→ כל הסקילים</a>
   <span class="sep">/</span> <span>🛠️ פיתוח וזרימת עבודה</span></nav>
-<header class="hero hero-skill">
+<header class="hero hero-skill"><div class="hero-text">
   <div class="skill-icon rise" aria-hidden="true"><span>🔀</span></div>
   <h1 class="rise">עבודת Git מקצה לקצה</h1>
   <p class="sub rise">פותר קונפליקטים עם תיעוד החלטות, כותב הודעות commit מקצועיות, ובונה pipeline של CI/CD.</p>
   <div class="cta rise">
     <a class="btn" href="#install">איך מתקינים</a>
     <a class="btn ghost" href="https://github.com/ronenamos-arch/claude-skills/tree/main/src/git-workflow">הקבצים ב-GitHub</a>
-  </div>
-</header>
+  </div></div></header>
 <section class="reveal"><h2>מה זה עושה</h2>
 <div class="card prose"><p>שלושה תהליכי Git שקלוד מבצע בעצמו מקצה לקצה (בלי להחזיר פקודה למשתמש): פתרון קונפליקטים ב-merge/rebase, כתיבת הודעת commit מהדיף האמיתי, ובניית תסריט (workflow) ל-GitHub Actions.</p><p>בפתרון קונפליקטים - מבין את הכוונה של שני הצדדים לפני שמכריע, שומר על שתי הכוונות כשהן לא סותרות, ותמיד מריץ build וטסטים אחרי כדי לוודא שה&#x27;פתרון&#x27; באמת עובד.</p><p>הודעות commit נכתבות בפורמט מקובל (Conventional Commits) מתוך הדיף עצמו - לא ניחוש - וה-CI/CD נבנה לפי הפרויקט האמיתי (שפה, כלי בדיקה, יעד דיפלוי), כולל רשימת secrets שצריך להוסיף ידנית.</p><h3>מתי זה שימושי</h3><ul class="checks"><li>יש קונפליקט ב-merge/rebase ורוצים שיפתר עם הסבר מה נשמר מכל צד</li><li>רוצים הודעת commit מקצועית שמסכמת נכון את השינוי בפועל</li><li>צריך pipeline של GitHub Actions שמריץ טסטים, בונה ומפרסם ל-staging</li><li>עובדים בענף משותף ורוצים למנוע טעויות מיזוג</li></ul></div></section>
 <section class="reveal"><h2>מה אומרים לקלוד</h2>

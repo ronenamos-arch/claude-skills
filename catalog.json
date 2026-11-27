@@ -29,5 +29,42 @@
       "title": "הסקילים שלכם יידלקו לבד, בעברית",
       "tagline": "מדריך ופרומפט אחד שמסדרים את כל הסקילים במרכזים לפי נושא, כדי ש-Claude Code יבחר לבד את הכלי הנכון לכל בקשה."
     }
+  ],
+  "freebies": [
+    {
+      "title": "25 Gemini Skills ומדריך יישומי",
+      "text": "25 סקילים מוכנים להורדה ושימוש מיידי עם Google Gemini: אוטומציות, סוכנים, ניתוח דאטה ופרודוקטיביות.",
+      "url": "https://ronenamos.gumroad.com/l/25-gemini-skills",
+      "image": "assets/freebies/gemini-skills.webp",
+      "alt": "עטיפת חבילת 25 הסקילים ל-Gemini"
+    },
+    {
+      "title": "דשבורד CFO אינטראקטיבי",
+      "text": "מרכז שליטה פיננסי חי שנבנה ב-Claude: תזרים 13 שבועות, תרחישי מה-אם עם סליידרים והפרומפט המלא.",
+      "url": "https://ronenamos.gumroad.com/l/cfo-dashboard",
+      "image": "assets/freebies/cfo-dashboard.webp",
+      "alt": "דשבורד CFO אינטראקטיבי עם גרפים וכרטיסי KPI"
+    },
+    {
+      "title": "50 הנחיות Copilot לפיננסים",
+      "text": "פרומפטים מוכנים ל-Excel, Outlook, Word, PowerPoint ו-Teams - אוטומציה של משימות כספים שגרתיות.",
+      "url": "https://ronenamos.gumroad.com/l/50-copilot",
+      "image": "assets/freebies/copilot-50.webp",
+      "alt": "עטיפת קובץ 50 ההנחיות ל-Copilot בפיננסים"
+    },
+    {
+      "title": "זרימות עבודה מבוססות פרויקטים ב-ChatGPT",
+      "text": "100 דרכים מעשיות לניסוי ויישום ב-ChatGPT: זרימות עבודה שלמות, ניתוח נתונים, אוטומציה ובקרה עסקית.",
+      "url": "https://ronenamos.gumroad.com/l/GPT-100",
+      "image": "assets/freebies/chatgpt-flows.webp",
+      "alt": "עטיפת מדריך זרימות העבודה ב-ChatGPT"
+    },
+    {
+      "title": "לבדוק AI כמו שבודקים אנליסט ג'וניור",
+      "text": "המדריך הפרקטי לביקורת תוצרי AI בכספים: גילוי הזיות, בדיקות סבירות ופרוטוקול 4 העיניים.",
+      "url": "https://ronenamos.gumroad.com/l/audit-ai-junior-analyst",
+      "image": "assets/freebies/audit-junior.webp",
+      "alt": "עטיפת המדריך לביקורת תוצרי AI"
+    }
   ]
 }
