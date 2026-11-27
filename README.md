@@ -74,7 +74,7 @@ curl -fsSL https://ronenamos-arch.github.io/claude-skills/install.sh | bash -s -
 
 נוסף סקיל אחד, עם דף הסבר בעברית, חבילת התקנה ודוגמה. בסך הכול: 49 סקילים.
 
-- [שורה תחתונה של עשר שניות בכל תשובה](https://ronenamos-arch.github.io/claude-skills/skills/tldr/): העבודה המלאה, ומתחתיה סיכום קצר עם החלטה אחת לכל היותר.
+- [שורה תחתונה של עשר שניות בכל תשובה](https://ronenamos-arch.github.io/claude-skills/skills/tldr/): התשובה המלאה נשארת כמו שהיא, ואחריה קו מפריד וסיכום קצר של ההחלטות.
 
 ## קרדיט
 
