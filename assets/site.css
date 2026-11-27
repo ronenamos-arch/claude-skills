@@ -407,7 +407,7 @@ details.faq[open] summary{color:var(--gold)}
 /* ---------- free resources (Gumroad lead magnets) ---------- */
 .freebies{max-width:none}
 .free-grid{list-style:none; padding:0; margin:0; display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:16px}
+  grid-template-columns:repeat(5,minmax(0,1fr)); gap:16px}
 .free-card{display:flex; flex-direction:column; height:100%; text-decoration:none; color:var(--ink);
   background:var(--card); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
   transition:transform 160ms var(--ease-out), border-color 160ms var(--ease-out)}
@@ -425,7 +425,8 @@ details.faq[open] summary{color:var(--gold)}
   .free-card:hover{border-color:var(--gold); transform:translateY(-3px)}
   .free-card:hover .free-pic img{transform:scale(1.04)}
 }
-@media (max-width:560px){ .free-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:12px} }
+@media (max-width:1020px){ .free-grid{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (max-width:640px){ .free-grid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px} }
 
 /* ---------- skill hero with media (image beside the title) ---------- */
 .hero-media{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
