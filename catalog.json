@@ -79,8 +79,8 @@
       "cta": "לפרטים ולסילבוס המלא",
       "url": "https://www.ronenamoscpa.co.il/courses/sell-page",
       "image": "assets/freebies/course-claude.webp",
-      "alt": "אינפוגרפיקה מהקורס: הפוך את מחלקת הכספים למכונת אוטומציה",
-      "pos": "center top"
+      "alt": "באנר קורס קלוד AI MASTER: קורס מעשי לאנשי כספים, 16 מודולים ו-200+ פרומפטים",
+      "pos": "center"
     },
     {
       "title": "Microsoft 365 Copilot Masterclass",
@@ -94,7 +94,7 @@
       "url": "https://courses.aitransformation.co.il/",
       "image": "assets/freebies/course-copilot.webp",
       "alt": "רונן עמוס, Finance AI Transformation",
-      "pos": "center 28%"
+      "pos": "center 18%"
     }
   ]
 }

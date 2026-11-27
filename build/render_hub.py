@@ -229,7 +229,8 @@ def freebies_html(freebies):
   </a>
 </li>""" for f in freebies)
     return f"""<section class="freebies" aria-labelledby="freebies-h">
-<h2 id="freebies-h" class="reveal"><span aria-hidden="true">🎁</span> משאבים חינמיים להורדה</h2>
+<p class="sec-eyebrow reveal">מתנות מרונן</p>
+<h2 id="freebies-h" class="sec-title reveal">משאבים חינמיים להורדה</h2>
 <p class="muted reveal">מתנות דיגיטליות מהחנות של רונן ב-Gumroad: לוחצים, משאירים מייל והקובץ אצלכם. בלי תשלום, בלי מנוי.</p>
 <ul class="free-grid">
 {cards}
@@ -245,6 +246,7 @@ def course_cards_html(cards):
     <span class="cc-pic"><img src="{esc(c['image'])}" alt="{esc(c['alt'])}" loading="lazy"
       style="object-position:{esc(c.get('pos','center top'))}"></span>
     <span class="cc-body">
+      <span class="cc-kicker">קורס</span>
       <span class="cc-t">{esc(c['title'])}</span>
       <span class="cc-d">{esc(c['text'])}</span>
       <ul class="cc-facts">{"".join(f"<li>{esc(f)}</li>" for f in c['facts'])}</ul>
@@ -253,7 +255,8 @@ def course_cards_html(cards):
   </a>
 </li>""" for c in cards)
     return f"""<section class="coursecards" aria-labelledby="cc-h">
-<h2 id="cc-h" class="reveal">הקורסים של רונן</h2>
+<p class="sec-eyebrow reveal">הכשרה מעשית</p>
+<h2 id="cc-h" class="sec-title reveal">הקורסים של רונן</h2>
 <p class="muted reveal">רוצים ללכת עד הסוף? שני הקורסים המעשיים של רונן עמוס, רו"ח.</p>
 <ul class="cc-grid">
 {items}
