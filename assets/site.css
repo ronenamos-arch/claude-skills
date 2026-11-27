@@ -475,3 +475,4 @@ details.faq[open] summary{color:var(--gold)}
 }
 @media (max-width:760px){ .cc-grid{grid-template-columns:1fr; gap:20px} .freebies,.coursecards{margin-top:48px}
   .cc-body{padding:20px 20px 22px} }
+@media (max-width:640px){ .free-grid>li:last-child:nth-child(odd){grid-column:1/-1} }
