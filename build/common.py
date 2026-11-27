@@ -143,12 +143,14 @@ def page_shell(title, description, icon, css_href, body, scripts=(), page_path="
 """
 
 
-def footer_html(plain=False):
+def footer_html(plain=False, rights=False):
+    legal = ('כל הזכויות שמורות ל-<bdi dir="ltr">AI FINANCE TRANSFORMATION</bdi>' if rights
+             else "הסקילים מסופקים כמו שהם, לשימוש חופשי. מותר להעביר הלאה.")
     brand = COMMUNITY_NAME if plain else f"✨ {COMMUNITY_NAME}"
     return f"""<footer class="foot">
   <p><span class="brand">{brand}</span> ·
      <a href="{esc(COURSE_URL)}">קורס קלוד AI MASTER</a> ·
      <a href="{esc(OWNER_SITE_URL)}">רונן עמוס, רו\"ח - המומחה שלכם ל-AI וכספים</a> ·
      <a href="{REPO_URL}">הקוד ב-GitHub</a></p>
-  <p>הסקילים מסופקים כמו שהם, לשימוש חופשי. מותר להעביר הלאה.</p>
+  <p>{legal}</p>
 </footer>"""

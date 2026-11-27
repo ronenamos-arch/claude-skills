@@ -236,6 +236,30 @@ def freebies_html(freebies):
 </ul></section>"""
 
 
+def course_cards_html(cards):
+    """Two designed course cards (Claude AI MASTER, Copilot Masterclass) after the free resources."""
+    if not cards:
+        return ""
+    items = "\n".join(f"""<li class="cc-wrap reveal">
+  <a class="cc-card" href="{esc(c['url'])}" target="_blank" rel="noopener">
+    <span class="cc-pic"><img src="{esc(c['image'])}" alt="{esc(c['alt'])}" loading="lazy"
+      style="object-position:{esc(c.get('pos','center top'))}"></span>
+    <span class="cc-body">
+      <span class="cc-t">{esc(c['title'])}</span>
+      <span class="cc-d">{esc(c['text'])}</span>
+      <ul class="cc-facts">{"".join(f"<li>{esc(f)}</li>" for f in c['facts'])}</ul>
+      <span class="cc-cta">{esc(c['cta'])} &larr;</span>
+    </span>
+  </a>
+</li>""" for c in cards)
+    return f"""<section class="coursecards" aria-labelledby="cc-h">
+<h2 id="cc-h" class="reveal">הקורסים של רונן</h2>
+<p class="muted reveal">רוצים ללכת עד הסוף? שני הקורסים המעשיים של רונן עמוס, רו"ח.</p>
+<ul class="cc-grid">
+{items}
+</ul></section>"""
+
+
 def filterbar_html(buckets):
     return f"""<div class="filterbar">
   <input class="search" type="search" placeholder="חיפוש סקיל... (למשל: וורד, בוט, יוטיוב)"
@@ -265,7 +289,8 @@ def render():
                       featured_html(items, catalog.get("featured", [])),
                       install_all_html(total),
                       filterbar_html(buckets), '<main id="skills">', sections_html(buckets),
-                      "</main>", freebies_html(catalog.get("freebies", [])), footer_html(), "</div>"])
+                      "</main>", freebies_html(catalog.get("freebies", [])),
+                      course_cards_html(catalog.get("course_cards", [])), footer_html(rights=True), "</div>"])
     html = page_shell(HUB_TITLE, HUB_DESC, "🧰", "assets/site.css", body, SCRIPTS, page_path="", og_name="hub")
     write_text(ROOT / "index.html", html)
     return len(items), total

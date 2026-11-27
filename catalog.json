@@ -66,5 +66,35 @@
       "image": "assets/freebies/audit-junior.webp",
       "alt": "עטיפת המדריך לביקורת תוצרי AI"
     }
+  ],
+  "course_cards": [
+    {
+      "title": "קורס קלוד AI MASTER",
+      "text": "קורס AI לרואי חשבון ומנהלי כספים: שליטה מלאה ב-Claude לאוטומציה של מחלקת הכספים, מסגירת חודש מהירה ועד דשבורדים לדירקטוריון.",
+      "facts": [
+        "16 מודולים מעשיים",
+        "200+ פרומפטים פיננסיים",
+        "ספריית Skills להורדה"
+      ],
+      "cta": "לפרטים ולסילבוס המלא",
+      "url": "https://www.ronenamoscpa.co.il/courses/sell-page",
+      "image": "assets/freebies/course-claude.webp",
+      "alt": "אינפוגרפיקה מהקורס: הפוך את מחלקת הכספים למכונת אוטומציה",
+      "pos": "center top"
+    },
+    {
+      "title": "Microsoft 365 Copilot Masterclass",
+      "text": "קורס Copilot לכספים: מאפס ידע ועד סוכני כספים אוטונומיים. ההכשרה המעשית שנבנתה על ידי רואה חשבון, ללא צורך בידע בקוד.",
+      "facts": [
+        "8 מודולים ממוקדים",
+        "10+ שעות תוכן ותרגול",
+        "4 מעבדות אקסל להורדה"
+      ],
+      "cta": "לפרטים על הקורס",
+      "url": "https://courses.aitransformation.co.il/",
+      "image": "assets/freebies/course-copilot.webp",
+      "alt": "רונן עמוס, Finance AI Transformation",
+      "pos": "center 22%"
+    }
   ]
 }
